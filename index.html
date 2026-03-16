@@ -6,83 +6,187 @@
     <title>RTS Fundraising Page</title>
     <style>
         body {
-            font-family: "Times New Roman", Times, serif;
+            /* Font style: Fantasy | Color: Dark Blue */
+            font-family: fantasy, serif;
+            color: #00008B;
             line-height: 1.15;
-            color: #00008B; 
+            background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
         }
 
-        .container {
+        .main-container {
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto;
             background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            margin-bottom: 40px;
         }
 
-        /* Layout Split */
-        .main-content {
+        .page-layout {
             display: flex;
-            gap: 40px;
+            justify-content: space-between;
             align-items: flex-start;
+            gap: 30px;
         }
 
-        /* Left Side: Student Links */
+        /* Student Section (Left Side) */
         .student-section {
             flex: 2;
-            border: 3px solid #301934; /* Dark Purple Border */
-            padding: 20px;
+            border: 4px solid #800080; /* Purple Border */
+            padding: 25px;
             border-radius: 10px;
         }
 
         .student-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
         .student-link {
             display: block;
-            padding: 12px;
-            background-color: #301934;
-            color: white;
+            background-color: #800080; /* Purple Buttons */
+            color: #ffffff; /* White Text */
             text-decoration: none;
+            padding: 15px;
             text-align: center;
-            border-radius: 5px;
-            font-size: 1.1em;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: transform 0.2s;
         }
 
         .student-link:hover {
-            opacity: 0.9;
-            text-decoration: underline;
+            transform: scale(1.03);
+            filter: brightness(1.2);
         }
 
-        /* Right Side: Vertical Thermometer */
-        .thermometer-section {
+        /* Thermometer Section (Right Side) */
+        .thermometer-container {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 200px;
+            min-width: 180px;
         }
 
-        .thermometer-wrapper {
+        .thermometer-rail {
             position: relative;
-            width: 60px;
-            height: 400px;
-            background-color: #FFCCCB; /* Light Red Background */
-            border: 3px solid #CD5C5C;
-            border-radius: 30px 30px 0 0;
-            margin-bottom: 50px; /* Space for the bulb at the bottom */
+            width: 50px;
+            height: 500px;
+            background-color: #ffeaea; /* Light red tint for empty space */
+            border: 3px solid #000;
+            border-radius: 25px 25px 0 0;
+            display: flex;
+            flex-direction: column-reverse;
         }
 
+        /* Thermometer Mercury/Fill */
         .thermometer-fill {
+            width: 100%;
+            height: 0%; /* Start at $0 */
+            background-color: #FF0000; /* Red Thermometer */
+            border-radius: 25px 25px 0 0;
+            transition: height 1s ease-out;
+        }
+
+        /* Thermometer Bulb */
+        .thermometer-bulb {
+            width: 90px;
+            height: 90px;
+            background-color: #FF0000;
+            border: 3px solid #000;
+            border-radius: 50%;
+            margin-top: -45px;
+            z-index: 2;
+        }
+
+        /* Increment Markers */
+        .markers {
             position: absolute;
+            left: -60px;
+            height: 500px;
+            width: 50px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        .marker-line {
+            position: absolute;
+            right: -63px;
+            width: 15px;
+            height: 2px;
+            background-color: #000; /* Black lines for every $500 */
+        }
+
+        .status-text {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Road To Success (RTS) Fundraising</h1>
+
+        <div class="page-layout">
+            <div class="student-section">
+                <h2 style="text-align: center; margin-top: 0;">Meet Our 12 Students</h2>
+                <div class="student-grid">
+                    <a href="about-1.html" class="student-link">Student 1</a>
+                    <a href="about-2.html" class="student-link">Student 2</a>
+                    <a href="about-3.html" class="student-link">Student 3</a>
+                    <a href="about-4.html" class="student-link">Student 4</a>
+                    <a href="about-5.html" class="student-link">Student 5</a>
+                    <a href="about-6.html" class="student-link">Student 6</a>
+                    <a href="about-7.html" class="student-link">Student 7</a>
+                    <a href="about-8.html" class="student-link">Student 8</a>
+                    <a href="about-9.html" class="student-link">Student 9</a>
+                    <a href="about-10.html" class="student-link">Student 10</a>
+                    <a href="about-11.html" class="student-link">Student 11</a>
+                    <a href="about-12.html" class="student-link">Student 12</a>
+                </div>
+            </div>
+
+            <div class="thermometer-container">
+                <div class="thermometer-rail">
+                    <div class="markers">
+                        <span style="bottom: 0%;">$0 <div class="marker-line"></div></span>
+                        <span style="bottom: 8.33%;">$500 <div class="marker-line"></div></span>
+                        <span style="bottom: 16.66%;">$1000 <div class="marker-line"></div></span>
+                        <span style="bottom: 25%;">$1500 <div class="marker-line"></div></span>
+                        <span style="bottom: 33.33%;">$2000 <div class="marker-line"></div></span>
+                        <span style="bottom: 41.66%;">$2500 <div class="marker-line"></div></span>
+                        <span style="bottom: 50%;">$3000 <div class="marker-line"></div></span>
+                        <span style="bottom: 58.33%;">$3500 <div class="marker-line"></div></span>
+                        <span style="bottom: 66.66%;">$4000 <div class="marker-line"></div></span>
+                        <span style="bottom: 75%;">$4500 <div class="marker-line"></div></span>
+                        <span style="bottom: 83.33%;">$5000 <div class="marker-line"></div></span>
+                        <span style="bottom: 91.66%;">$5500 <div class="marker-line"></div></span>
+                        <span style="bottom: 100%;">$6000 <div class="marker-line"></div></span>
+                    </div>
+                    <div class="thermometer-fill"></div>
+                </div>
+                <div class="thermometer-bulb"></div>
+                
+                <div class="status-text">
+                    Current Raised:<br>
+                    <strong>$0</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

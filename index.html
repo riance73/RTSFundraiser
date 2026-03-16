@@ -6,9 +6,10 @@
     <title>RTS Fundraising Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            /* Font changed to Times New Roman and color to Dark Blue */
+            font-family: "Times New Roman", Times, serif;
             line-height: 1.15;
-            color: #333;
+            color: #00008B; 
             margin: 0;
             padding: 20px;
             background-color: #f4f4f4;
@@ -24,7 +25,8 @@
         }
 
         h1, h2, h3 {
-            color: #2c3e50;
+            /* Headers updated to Dark Blue */
+            color: #00008B;
             text-align: center;
         }
 
@@ -35,16 +37,17 @@
         }
 
         .progress-bar-bg {
-            background-color: #e0e0e0;
+            /* Background changed to Light Red with a Border */
+            background-color: #FFCCCB;
+            border: 2px solid #CD5C5C;
             border-radius: 25px;
             height: 35px;
             width: 100%;
             overflow: hidden;
-            border: 1px solid #ccc;
         }
 
         .progress-bar-fill {
-            background: linear-gradient(90deg, #4caf50, #8bc34a);
+            background: #4caf50;
             height: 100%;
             width: 0%; /* Starting at zero */
             transition: width 0.5s ease-in-out;
@@ -68,16 +71,17 @@
         .student-link {
             display: block;
             padding: 15px;
-            background-color: #2c3e50;
+            /* Background changed to Dark Purple */
+            background-color: #301934;
             color: white;
             text-decoration: none;
             text-align: center;
             border-radius: 5px;
-            transition: background 0.3s;
+            transition: opacity 0.3s;
         }
 
         .student-link:hover {
-            background-color: #34495e;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -97,26 +101,3 @@
                 <span>Goal: $6,000</span>
             </div>
             <p><strong>Current Status:</strong> $0 raised of $6,000</p>
-        </div>
-
-        <hr>
-
-        <h2>Meet Our Students</h2>
-        <p style="text-align: center;">Click on a student below to learn more about their journey and how they are contributing to RTS.</p>
-        
-        <div class="student-grid">
-            <a href="about-student1.html" class="student-link">Student 1</a>
-            <a href="about-student2.html" class="student-link">Student 2</a>
-            <a href="about-student3.html" class="student-link">Student 3</a>
-            <a href="about-student4.html" class="student-link">Student 4</a>
-            <a href="about-student5.html" class="student-link">Student 5</a>
-            <a href="about-student6.html" class="student-link">Student 6</a>
-            <a href="about-student7.html" class="student-link">Student 7</a>
-            <a href="about-student8.html" class="student-link">Student 8</a>
-            <a href="about-student9.html" class="student-link">Student 9</a>
-            <a href="about-student10.html" class="student-link">Student 10</a>
-        </div>
-    </div>
-
-</body>
-</html>

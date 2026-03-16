@@ -6,105 +6,132 @@
     <title>RTS Fundraising Page</title>
     <style>
         body {
-            /* Font: Fantasy | Color: Dark Blue */
             font-family: fantasy, serif;
-            color: #00008B;
-            background-color: #fcfcfc;
+            color: #00008B; /* Dark Blue */
+            background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         h1 {
             text-align: center;
-            font-size: 40px;
+            font-size: 3em;
+            margin-bottom: 40px;
         }
 
-        /* Layout Table - Highly Stable */
-        .layout-table {
+        /* Two-Column Layout */
+        .page-grid {
+            display: table;
             width: 100%;
-            border-collapse: collapse;
         }
 
-        .left-column {
-            width: 70%;
+        .student-col {
+            display: table-cell;
+            width: 65%;
             vertical-align: top;
+            border: 6px solid #800080; /* Purple Border */
+            border-radius: 20px;
             padding: 20px;
-            /* Purple Border around student section */
-            border: 5px solid #800080;
-            border-radius: 15px;
         }
 
-        .right-column {
-            width: 30%;
+        .therm-col {
+            display: table-cell;
+            width: 35%;
             vertical-align: top;
-            padding: 20px;
             text-align: center;
         }
 
-        /* Student Grid */
-        .student-grid {
-            display: block;
-            text-align: center;
+        /* Student Buttons */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .student-link {
-            display: inline-block;
-            width: 40%;
-            margin: 10px;
-            padding: 20px 0;
+        .student-btn {
             background-color: #800080; /* Purple */
             color: #ffffff !important; /* White Text */
             text-decoration: none;
-            font-size: 20px;
-            border-radius: 10px;
+            width: 40%;
+            padding: 20px 0;
             text-align: center;
+            border-radius: 10px;
+            font-size: 1.2em;
         }
 
-        /* Thermometer Graphics */
-        .therm-tube {
-            width: 50px;
-            height: 500px;
-            background-color: #ffeaea;
-            border: 3px solid #000000;
-            margin: 0 auto;
+        /* Thermometer Logic */
+        .thermometer-wrapper {
             position: relative;
-            border-radius: 25px 25px 0 0;
+            height: 600px; /* Fixed height for exact alignment */
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        .tube {
+            position: absolute;
+            right: 20px;
+            width: 60px;
+            height: 500px;
+            border: 4px solid #000000;
+            border-radius: 30px 30px 0 0;
+            /* This creates a black line every 41.66px (500/6000 * 500px) */
+            background: #ffeaea linear-gradient(
+                to bottom,
+                transparent 98%,
+                #000000 98%
+            );
+            background-size: 100% 41.66px; 
+            display: flex;
+            flex-direction: column-reverse;
         }
 
         .mercury {
-            position: absolute;
-            bottom: 0;
             width: 100%;
-            height: 0%; /* Starting at $0 */
-            background-color: #FF0000; /* Red */
-            border-radius: 20px 20px 0 0;
+            height: 0%; /* Start at $0 */
+            background-color: #FF0000;
+            border-radius: 25px 25px 0 0;
         }
 
         .bulb {
+            position: absolute;
+            bottom: 20px;
+            right: 0px;
             width: 100px;
             height: 100px;
             background-color: #FF0000;
-            border: 3px solid #000000;
+            border: 4px solid #000000;
             border-radius: 50%;
-            margin: -50px auto 0 auto;
+            z-index: 5;
         }
 
-        /* Tick Marks */
-        .tick {
+        /* Labels aligned to the lines */
+        .label-stack {
             position: absolute;
-            left: -55px;
-            width: 50px;
-            text-align: right;
+            left: 0;
+            top: 0;
+            height: 500px;
+            width: 60px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
             font-weight: bold;
-            font-size: 14px;
+            padding-bottom: 2px; /* Fine tuning */
+        }
+
+        .stats {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -113,45 +140,53 @@
     <div class="container">
         <h1>RTS (Road To Success) Fundraising Page</h1>
 
-        <table class="layout-table">
-            <tr>
-                <td class="left-column">
-                    <h2 style="text-align: center;">Meet Our Students</h2>
-                    <div class="student-grid">
-                        <a href="student1.html" class="student-link">Student 1</a>
-                        <a href="student2.html" class="student-link">Student 2</a>
-                        <a href="student3.html" class="student-link">Student 3</a>
-                        <a href="student4.html" class="student-link">Student 4</a>
-                        <a href="student5.html" class="student-link">Student 5</a>
-                        <a href="student6.html" class="student-link">Student 6</a>
-                        <a href="student7.html" class="student-link">Student 7</a>
-                        <a href="student8.html" class="student-link">Student 8</a>
-                        <a href="student9.html" class="student-link">Student 9</a>
-                        <a href="student10.html" class="student-link">Student 10</a>
-                        <a href="student11.html" class="student-link">Student 11</a>
-                        <a href="student12.html" class="student-link">Student 12</a>
-                    </div>
-                </td>
+        <div class="page-grid">
+            <div class="student-col">
+                <h2 style="text-align: center; margin-top: 0;">Our Students</h2>
+                <div class="btn-container">
+                    <a href="s1.html" class="student-btn">Student 1</a>
+                    <a href="s2.html" class="student-btn">Student 2</a>
+                    <a href="s3.html" class="student-btn">Student 3</a>
+                    <a href="s4.html" class="student-btn">Student 4</a>
+                    <a href="s5.html" class="student-btn">Student 5</a>
+                    <a href="s6.html" class="student-btn">Student 6</a>
+                    <a href="s7.html" class="student-btn">Student 7</a>
+                    <a href="s8.html" class="student-btn">Student 8</a>
+                    <a href="s9.html" class="student-btn">Student 9</a>
+                    <a href="s10.html" class="student-btn">Student 10</a>
+                    <a href="s11.html" class="student-btn">Student 11</a>
+                    <a href="s12.html" class="student-btn">Student 12</a>
+                </div>
+            </div>
 
-                <td class="right-column">
-                    <div class="therm-tube">
-                        <div class="tick" style="bottom: 100%;">$6000 —</div>
-                        <div class="tick" style="bottom: 83.3%;">$5000 —</div>
-                        <div class="tick" style="bottom: 66.6%;">$4000 —</div>
-                        <div class="tick" style="bottom: 50%;">$3000 —</div>
-                        <div class="tick" style="bottom: 33.3%;">$2000 —</div>
-                        <div class="tick" style="bottom: 16.6%;">$1000 —</div>
-                        <div class="tick" style="bottom: 0%;">$0 —</div>
-                        
+            <div class="therm-col">
+                <div class="thermometer-wrapper">
+                    <div class="label-stack">
+                        <span>$0</span>
+                        <span>$500</span>
+                        <span>$1000</span>
+                        <span>$1500</span>
+                        <span>$2000</span>
+                        <span>$2500</span>
+                        <span>$3000</span>
+                        <span>$3500</span>
+                        <span>$4000</span>
+                        <span>$4500</span>
+                        <span>$5000</span>
+                        <span>$5500</span>
+                        <span>$6000</span>
+                    </div>
+                    <div class="tube">
                         <div class="mercury"></div>
                     </div>
                     <div class="bulb"></div>
-                    <div style="margin-top: 50px; font-size: 24px; font-weight: bold;">
-                        Raised: $0
-                    </div>
-                </td>
-            </tr>
-        </table>
+                </div>
+                <div class="stats">
+                    Goal: $6,000<br>
+                    Current Total: $0
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { background: #330000; text-align: center; text-shadow: 2px 2px #ff8080; font-family: fantasy, serif; padding: 40px; }
+      p { color: #ff6a6a; text-shadow: 1px 1px #db1717; font-size: 1.2em; line-height: 1.6; }
+      h1 { font-weight: bold; color: #ff4242; font-size: 2.5em; }
+      h2 { color: #ff5353; font-size: 1.8em; }
+      a.bean { color: #ff4d4d; font-size: 35px; text-decoration: underline; }
+      .back { color: white; text-decoration: none; font-weight: bold; display: block; margin-bottom: 30px; }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="back">← Back to Main Page</a>
+    <h1> Who am I? </h1>
+    <p> I'm a high school student at RTS who was in normal school before. I left normal school because I wasn't getting enough support.</p>
+    <h2>What does RTS mean to me? </h2>
+    <p>RTS is a program where i found a second chance as a student, getting enough support inside and outside the classroom.</p>
+    <h2> Why does this project matter? </h2>
+    <p>This project is fundamental to RTS because we are building a legacy where each year the space transforms into a better place.</p>
+    <br>
+    <a href="https://www.amazon.com/dp/B0CDTMCLNZ/" class="bean"> Bean bag Link </a>
+  </body>
+</html>

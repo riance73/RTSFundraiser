@@ -2,19 +2,52 @@
 <html>
   <head>
     <style>
-      body { background-color: darkseagreen; font-family: serif; font-size: 18px; padding: 40px; color: cornsilk; }
+      body { 
+        background-color: darkseagreen; 
+        font-family: serif; 
+        font-size: 18px; 
+        padding: 40px; 
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the card on the screen */
+      }
+
+      /* --- THE CARD SHAPE --- */
+      main {
+        background-color: #556b2f; /* A darker green so cornsilk text is readable */
+        max-width: 800px;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        margin-top: 20px;
+      }
+
       p { color: cornsilk; line-height: 1.6; }
-      h1 { font-weight: bold; color: cornsilk; font-size: 2.5em; text-align: center; }
+      h1 { font-weight: bold; color: cornsilk; font-size: 2.5em; text-align: center; margin-top: 0; }
       h2 { color: cornsilk; border-bottom: 1px solid cornsilk; padding-bottom: 10px; }
-      .back { color: white; text-decoration: none; font-weight: bold; }
+      
+      .back { 
+        color: white; 
+        text-decoration: none; 
+        font-weight: bold; 
+        align-self: flex-start; /* Keeps the back button on the left */
+      }
     </style>
   </head>
   <body>
+    
     <a href="index.html" class="back">← Back to Main Page</a>
-    <h1> Danmarys negron</h1>
-    <h2> who am i?</h2>
-    <p> I am an 18 year old high school student at RTS. Before coming to RTS I went to Charlestown high school where I didn't get much support as a student.</p>
-    <h2> What does RTS mean to you?</h2>
-    <p> what RTS means to me is the support i wasn't getting in my old school. A second chance at having a education.</p>
+
+    <main>
+      <h1> Danmarys Negron</h1>
+      
+      <h2> who am i?</h2>
+      <p> I am an 18 year old high school student at RTS. Before coming to RTS I went to Charlestown high school where I didn't get much support as a student.</p>
+      
+      <h2> What does RTS mean to you?</h2>
+      <p> What RTS means to me is the support i wasn't getting in my old school. A second chance at having a education.</p>
+    </main>
+
   </body>
 </html>

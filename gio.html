@@ -16,7 +16,7 @@
 
     /* 2. The Card Shape */
     main {
-      background-color: white;   /* The white card container */
+      background-color: white;   
       max-width: 850px; 
       width: 100%;
       padding: 40px;             
@@ -33,33 +33,31 @@
       margin-top: 20px;
     }
     
-    h1 { margin-top: 0; } /* Keeps the top title snug to the top of the card */
+    h1 { margin-top: 0; }
 
     p { 
       font-size: 18px; 
       color: black; 
       font-weight: bold; 
-      /* We keep a light background for the text to match his original style */
       background: rgba(0, 0, 0, 0.05); 
       padding: 15px; 
       border-radius: 10px; 
       line-height: 1.5;
     }
 
-    /* Keeps Gio's image layout */
-    img { 
-      width: 45%; 
-      border: 5px solid khaki; 
-      margin: 10px 2.5%; 
-      float: left; 
-      border-radius: 5px;
+    /* 3. NEW: Image Row Container to put images next to each other */
+    .image-row {
+      display: flex;
+      justify-content: space-between; /* Puts space between the two images */
+      gap: 10px; /* Gap between images */
+      margin-top: 20px;
     }
 
-    /* Clears the floats so the card doesn't collapse at the bottom */
-    .clearfix::after { 
-      content: ""; 
-      clear: both; 
-      display: table; 
+    .image-row img { 
+      width: 48%; /* Takes up nearly half the row */
+      border: 5px solid khaki; 
+      border-radius: 5px;
+      box-sizing: border-box;
     }
 
     .back { 
@@ -67,7 +65,7 @@
       text-decoration: none; 
       font-weight: bold; 
       font-size: 1.2em; 
-      align-self: flex-start; /* Keeps the back button on the left */
+      align-self: flex-start; 
       margin-bottom: 20px;
     }
   </style>
@@ -76,7 +74,7 @@
 
   <a href="index.html" class="back">← Back to Main Page</a>
 
-  <main class="clearfix">
+  <main>
     <h1> Who am i?</h1>
     <p>I am Gio, a teen trying to graduate and use this program to my advantage to finish what i need for myself.</p>
     
@@ -86,8 +84,10 @@
     <h2>Why does this project matter?</h2>
     <p>This is a project for the next generations, not for us. The current students helping organize this is for the next class to enjoy.</p>
     
-    <img src="https://www.humantouch.com/cdn/shop/files/novo-flex-massage-chair-4330227.jpg?v=1760472286" alt="massage chair">
-    <img src="https://m.media-amazon.com/images/I/81cJpcldr4L._AC_UF894,1000_QL80_.jpg" alt="Swinging chair">
+    <div class="image-row">
+      <img src="https://www.humantouch.com/cdn/shop/files/novo-flex-massage-chair-4330227.jpg?v=1760472286" alt="massage chair">
+      <img src="https://m.media-amazon.com/images/I/81cJpcldr4L._AC_UF894,1000_QL80_.jpg" alt="Swinging chair">
+    </div>
   </main>
 
 </body>

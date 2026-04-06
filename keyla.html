@@ -44,14 +44,14 @@
             line-height: 1.6;
         }
 
-        /* THIS PART MAKES IT 50% AND CENTERS IT */
-        img {
-            width: 50% !important; 
+        /* We changed 'img' to '.rug-style' to force a fresh update */
+        .rug-style {
+            width: 40% !important; /* Slightly smaller than 50% just to be sure you see the change */
             height: auto;
             display: block;
-            margin: 30px auto 10px auto; 
+            margin: 40px auto 10px auto; 
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .back-btn { 
@@ -77,7 +77,7 @@
         <h2>what does rts mean to me?</h2>
         <p>Rts is special to me because it has helped me succeed...</p>
 
-        <img src="https://images.rugimg.com/pink-round-boho-rug/3188581/3188581_main.jpg?width=1555&height=2000&fit=bounds&quality=55" alt="Pink Boho Rug">
+        <img class="rug-style" src="https://images.rugimg.com/pink-round-boho-rug/3188581/3188581_main.jpg?width=1555&height=2000&fit=bounds&quality=55" alt="Pink Boho Rug">
     </main>
 
 </body>

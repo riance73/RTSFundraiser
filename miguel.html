@@ -1,24 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body { background: #330000; text-align: center; text-shadow: 2px 2px #ff8080; font-family: fantasy, serif; padding: 40px; }
-      p { color: #ff6a6a; text-shadow: 1px 1px #db1717; font-size: 1.2em; line-height: 1.6; }
-      h1 { font-weight: bold; color: #ff4242; font-size: 2.5em; }
-      h2 { color: #ff5353; font-size: 1.8em; }
-      a.bean { color: #ff4d4d; font-size: 35px; text-decoration: underline; }
-      .back { color: white; text-decoration: none; font-weight: bold; display: block; margin-bottom: 30px; }
-    </style>
-  </head>
-  <body>
-    <a href="index.html" class="back">← Back to Main Page</a>
+<head>
+  <style>
+    /* 1. Body centers the card and keeps the student's deep dark red background */
+    body { 
+      background-color: #330000; 
+      font-family: fantasy, serif; 
+      margin: 0;
+      padding: 40px 20px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* 2. The Card Shape */
+    main {
+      background-color: white;   /* The white card container */
+      max-width: 750px; 
+      width: 100%;
+      padding: 40px;             
+      border-radius: 20px;       
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for the dark theme */
+      box-sizing: border-box;
+      /* We remove the global text-shadow here so it doesn't look blurry on white */
+      text-shadow: none; 
+    }
+
+    /* Student's specific styles preserved but adjusted for the white background */
+    h1 { 
+      font-weight: bold; 
+      color: #ff4242; 
+      font-size: 2.5em; 
+      margin-top: 0;
+      text-shadow: 1px 1px #ff8080; /* Lightened shadow for readability */
+    }
+
+    h2 { 
+      color: #ff5353; 
+      font-size: 1.8em; 
+      border-bottom: 2px solid #ffcccc;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    p { 
+      color: #db1717; /* Darkened slightly for better contrast on white */
+      font-size: 1.2em; 
+      line-height: 1.6; 
+      text-shadow: none; /* Removed shadow on paragraph text for clarity */
+    }
+
+    img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .back { 
+      color: white; 
+      text-decoration: none; 
+      font-weight: bold; 
+      align-self: flex-start; /* Keeps the back link on the left */
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back">← Back to Main Page</a>
+
+  <main>
     <h1> Who am I? </h1>
     <p> I'm a high school student at RTS who was in normal school before. I left normal school because I wasn't getting enough support.</p>
+    
     <h2>What does RTS mean to me? </h2>
     <p>RTS is a program where i found a second chance as a student, getting enough support inside and outside the classroom.</p>
+    
     <h2> Why does this project matter? </h2>
     <p>This project is fundamental to RTS because we are building a legacy where each year the space transforms into a better place.</p>
-    <br>
-    <img src="https://m.media-amazon.com/images/I/81IOWcjz2LL._AC_SX679_.jpg" alt="giant bean bag" style="width:300px;">
-  </body>
+    
+    <img src="https://m.media-amazon.com/images/I/81IOWcjz2LL._AC_SX679_.jpg" alt="giant bean bag">
+  </main>
+
+</body>
 </html>

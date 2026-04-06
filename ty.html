@@ -1,22 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body { text-align: center; background-color: #a1a1a8; font-family: fantasy, serif; padding: 30px; }
-      p { font-size: 25.5px; color: black; line-height: 1.4; }
-      h1 { color: crimson; font-weight: bold; font-size: 37.5px; margin-top: 40px; }
-      img { max-width: 100%; height: auto; border: 5px solid crimson; margin-top: 20px; }
-      .back { display: block; margin-bottom: 20px; color: #00008B; text-decoration: none; font-weight: bold; }
-    </style>
-  </head>
-  <body>
-    <a href="index.html" class="back">← Back to Main Page</a>
+<head>
+  <style>
+    /* 1. Body centers the card and keeps the student's gray background */
+    body { 
+      background-color: #a1a1a8; 
+      font-family: fantasy, serif; 
+      margin: 0;
+      padding: 40px 20px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* 2. The Card Shape */
+    main {
+      background-color: white;   /* The white card container */
+      max-width: 800px; 
+      width: 100%;
+      padding: 40px;             
+      border-radius: 20px;       
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+      box-sizing: border-box;
+    }
+
+    /* Student's specific styles preserved */
+    h1 { 
+      color: crimson; 
+      font-weight: bold; 
+      font-size: 37.5px; 
+      margin-top: 40px;
+      border-bottom: 2px solid #eee; /* Adds a clean divider like the others */
+      padding-bottom: 10px;
+    }
+
+    h1:first-child { margin-top: 0; } /* Keeps the top title snug */
+
+    p { 
+      font-size: 25.5px; 
+      color: black; 
+      line-height: 1.4; 
+      margin-bottom: 20px;
+    }
+
+    img { 
+      max-width: 100%; 
+      height: auto; 
+      border: 5px solid crimson; 
+      margin-top: 20px; 
+      border-radius: 10px;
+    }
+
+    .back { 
+      color: #00008B; 
+      text-decoration: none; 
+      font-weight: bold; 
+      align-self: flex-start; /* Keeps the back link on the left */
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back">← Back to Main Page</a>
+
+  <main>
     <h1>who am i?</h1>
     <p>I am a student at RTS that is trying to find a way out of the things I was doing in the past before I came to rts and it's been helping me as a person and a student.</p>
+    
     <h1>what does RTS mean to you?</h1>
     <p>RTS is a place where i can have a fresh start and get my highschool diploma and have place where i can go and learn and grow as a person.</p>
+    
     <h1>why does this project matter to you?</h1>
     <p>This project matters to me because it shows a side where other people do not get to see and shows a past where it was a back time for me.</p>
-    <img src="Screenshot-2026-03-31-1.29.51-PM.png" alt="Student Project">
-  </body>
-</html>
+    
+    <img src="Screenshot-2026-03-31-1.29.5

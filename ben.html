@@ -2,48 +2,62 @@
 <html>
 <head>
   <style>
+    /* 1. Body centers the content and sets the outer background */
     body { 
-      background-color: lightblue; /* Changed to lightblue per your goal */
+      background-color: lightblue; 
       font-family: fantasy, serif; 
       margin: 0;
       padding: 40px 20px; 
       display: flex;
-      flex-direction: column; /* Keeps the back button above the card */
-      align-items: center;    /* Centers the card */
+      flex-direction: column;
+      align-items: center; /* Centers the card horizontally */
+      min-height: 100vh;
     }
 
-    /* This styles the actual white box (the card) */
+    /* 2. This creates the "Card" shape around the student's work */
     main {
       background-color: white;   
-      max-width: 750px;          
+      max-width: 750px; 
+      width: 100%;         /* Ensures it's responsive on mobile */
       padding: 40px;             
-      border-radius: 15px;       
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+      border-radius: 20px;       /* Rounded corners */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow for the 'card' look */
+      box-sizing: border-box;
     }
 
     /* Student's specific text styles */
     p { 
-      color: darkslategray; /* Changed from lemonchiffon so it's readable on white */
+      color: darkslategray; 
       font-style: italic; 
-      font-size: 18px; 
+      font-size: 1.2rem;
+      line-height: 1.6;
     }
 
     h3, h4, h2 { 
-      color: #2f4f4f; /* darkslategray to match student style */
+      color: #2f4f4f; 
+      border-bottom: 2px solid lightblue; /* Line under heading like the image */
+      padding-bottom: 10px;
+      margin-top: 0;
     }
 
     img { 
-      max-width: 100%; /* Ensures image stays inside the card */
+      max-width: 100%; 
       height: auto;
-      border: 2px solid lightblue; 
-      border-radius: 8px;
+      border-radius: 12px; /* Matches the card's rounded corners */
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .back-link {
-      align-self: flex-start; /* Keeps the link on the left */
-      margin-bottom: 20px;
+      align-self: flex-start; /* Keeps the link on the far left */
+      max-width: 750px;
+      width: 100%;
+      margin: 0 auto 20px auto; /* Centers the link area but keeps text left */
       color: #2f4f4f;
       text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -54,6 +68,7 @@
   <main>
     <h3>Who am I?</h3>
     <p>I am a student at RTS trying to get on track...</p>
+    
     <img src="https://res.cloudinary.com/mybobs/image/upload/q_auto,f_auto,w_2880/20087177_gallery_01_wide" alt="grey couch">
   </main>
 

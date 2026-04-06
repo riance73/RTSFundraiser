@@ -23,7 +23,6 @@
             border-radius: 20px;       
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
             box-sizing: border-box;
-            text-align: center; /* Centers the image inside the card */
         }
 
         /* Student's specific styles preserved */
@@ -51,12 +50,13 @@
             text-align: left;
         }
 
-        /* Rug Image Style */
+        /* Rug Image Style - Now 50% smaller and centered */
         img {
-            max-width: 100%;
+            width: 50%; /* Reduced size by 50% */
             height: auto;
+            display: block;
+            margin: 20px auto 0 auto; /* Added margin to top, centered horizontally */
             border-radius: 15px;
-            margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
 
@@ -78,13 +78,13 @@
     <a href="index.html" class="back-btn">← Back to Main Page</a>
 
     <main>
-        <img src="https://images.rugimg.com/pink-round-boho-rug/3188581/3188581_main.jpg?width=1555&height=2000&fit=bounds&quality=55" alt="Pink Boho Rug">
-
         <h1>Who am I?</h1>
         <p>Hello my name is keyla and i was mentally not in the right head space...</p>
         
         <h2>what does rts mean to me?</h2>
         <p>Rts is special to me because it has helped me succeed...</p>
+
+        <img src="https://images.rugimg.com/pink-round-boho-rug/3188581/3188581_main.jpg?width=1555&height=2000&fit=bounds&quality=55" alt="Pink Boho Rug">
     </main>
 
 </body>

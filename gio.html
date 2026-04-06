@@ -1,24 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body { background: blue; font-family: "Cursive", fantasy, serif; padding: 30px; color: white; }
-      p { font-size: 18px; color: black; font-weight: bold; background: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 10px; }
-      h1, h2 { font-weight: bold; color: red; text-shadow: 2px 2px black; }
-      img { width: 45%; border: 5px solid khaki; margin: 10px; float: left; }
-      .back { color: yellow; text-decoration: none; font-weight: bold; font-size: 1.2em; }
-      .clearfix::after { content: ""; clear: both; display: table; }
-    </style>
-  </head>
-  <body class="clearfix">
-    <a href="index.html" class="back">← Back to Main Page</a>
+<head>
+  <style>
+    /* 1. Body centers the card and keeps the student's blue background */
+    body { 
+      background: blue; 
+      font-family: "Cursive", fantasy, serif; 
+      margin: 0;
+      padding: 40px 20px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      min-height: 100vh;
+    }
+
+    /* 2. The Card Shape */
+    main {
+      background-color: white;   /* The white card container */
+      max-width: 850px; 
+      width: 100%;
+      padding: 40px;             
+      border-radius: 20px;       
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+      box-sizing: border-box;
+    }
+
+    /* Student's specific styles preserved */
+    h1, h2 { 
+      font-weight: bold; 
+      color: red; 
+      text-shadow: 2px 2px black; 
+      margin-top: 20px;
+    }
+    
+    h1 { margin-top: 0; } /* Keeps the top title snug to the top of the card */
+
+    p { 
+      font-size: 18px; 
+      color: black; 
+      font-weight: bold; 
+      /* We keep a light background for the text to match his original style */
+      background: rgba(0, 0, 0, 0.05); 
+      padding: 15px; 
+      border-radius: 10px; 
+      line-height: 1.5;
+    }
+
+    /* Keeps Gio's image layout */
+    img { 
+      width: 45%; 
+      border: 5px solid khaki; 
+      margin: 10px 2.5%; 
+      float: left; 
+      border-radius: 5px;
+    }
+
+    /* Clears the floats so the card doesn't collapse at the bottom */
+    .clearfix::after { 
+      content: ""; 
+      clear: both; 
+      display: table; 
+    }
+
+    .back { 
+      color: yellow; 
+      text-decoration: none; 
+      font-weight: bold; 
+      font-size: 1.2em; 
+      align-self: flex-start; /* Keeps the back button on the left */
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back">← Back to Main Page</a>
+
+  <main class="clearfix">
     <h1> Who am i?</h1>
     <p>I am Gio, a teen trying to graduate and use this program to my advantage to finish what i need for myself.</p>
+    
     <h2>What does Rts mean to me?</h2>
     <p>Rts is a blessing as i see it... I was out of school for 2 and half years, lost all my dreams that I had since I was a kid but this program brought me back on track.</p>
+    
     <h2>Why does this project matter?</h2>
     <p>This is a project for the next generations, not for us. The current students helping organize this is for the next class to enjoy.</p>
+    
     <img src="https://www.humantouch.com/cdn/shop/files/novo-flex-massage-chair-4330227.jpg?v=1760472286" alt="massage chair">
     <img src="https://m.media-amazon.com/images/I/81cJpcldr4L._AC_UF894,1000_QL80_.jpg" alt="Swinging chair">
-  </body>
+  </main>
+
+</body>
 </html>

@@ -1,23 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body { background: white; font-family: fantasy, serif; padding: 40px; text-align: center; }
-      p { color: purple; font-size: 1.2em; line-height: 1.5; }
-      h2, h3 { color: #800080; font-weight: bold; }
-      img { max-width: 300px; margin-bottom: 20px; }
-      .back { color: #00008B; text-decoration: none; font-weight: bold; }
-    </style>
-  </head>
-  <body>
-    <a href="index.html" class="back">← Back to Main Page</a><br>
+<head>
+  <style>
+    /* 1. Body centers the card and adds a soft background so the white card is visible */
+    body { 
+      background-color: #f3f0f7; /* Very light lavender to match purple text */
+      font-family: fantasy, serif; 
+      margin: 0;
+      padding: 40px 20px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* 2. The Card Shape */
+    main {
+      background-color: white;   /* The white card container */
+      max-width: 700px; 
+      width: 100%;
+      padding: 40px;             
+      border-radius: 25px;       
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+      box-sizing: border-box;
+    }
+
+    /* Student's specific styles preserved */
+    p { 
+      color: purple; 
+      font-size: 1.2em; 
+      line-height: 1.5; 
+      margin-bottom: 25px;
+    }
+
+    h2, h3 { 
+      color: #800080; 
+      font-weight: bold; 
+      border-bottom: 1px solid #eee; /* Subtle divider for the "card" feel */
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+
+    h2 { margin-top: 0; } /* Keeps the top title snug */
+
+    img { 
+      max-width: 300px; 
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px; 
+      border-radius: 10px;
+    }
+
+    .back { 
+      color: #00008B; 
+      text-decoration: none; 
+      font-weight: bold; 
+      align-self: flex-start; /* Keeps the link on the left */
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back">← Back to Main Page</a>
+
+  <main>
     <img src="decorations.png" alt="Vine Decorations">
     <p>vine decorations soft/cozy.</p>
+    
     <h2> who am i </h2>
     <p>My name is Katie. Before I joined RTS I was struggling in my academics... I stopped going to school for like 1 month because I was feeling a little depressed.</p>
+    
     <h3>What does rts mean to me?</h3>
     <p>RTS to me feels like family. It is a place where we can all be united and help each other motivate one another to graduate.</p>
+    
     <h3>why does this project matter to me</h3>
     <p>This matters to me because since everyone is so communicative there should be a more comfortable space in the common area.</p>
-  </body>
+  </main>
+
+</body>
 </html>

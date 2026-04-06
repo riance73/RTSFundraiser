@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body { background: grey; font-family: fantasy, serif; padding: 20px; }
-      p { color: lemonchiffon; font-style: italic; font-size: 18px; }
-      h3, h4, h2 { color: white; }
-      display: flex;
-      justify-content: center; /* Centers the card horizontally */
-      background-color: lightblue; 
+<head>
+  <style>
+    body { 
+      background-color: lightblue; /* Changed to lightblue per your goal */
+      font-family: fantasy, serif; 
       margin: 0;
-      padding: 40px 20px;
-      }
-
-    main {
-      background-color: white;   /* The card color */
-      max-width: 750px;          /* Prevents it from getting too wide */
-      padding: 40px;             /* Space inside the card */
-      border-radius: 15px;       /* Rounded corners */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* The soft shadow */
+      padding: 40px 20px; 
+      display: flex;
+      flex-direction: column; /* Keeps the back button above the card */
+      align-items: center;    /* Centers the card */
     }
-      img { max-width: 500px; border: 2px solid white; }
-    </style>
-  </head>
-  <body>
-    <a href="index.html" style="color: white; text-decoration: none;">← Back to Main Page</a>
+
+    /* This styles the actual white box (the card) */
+    main {
+      background-color: white;   
+      max-width: 750px;          
+      padding: 40px;             
+      border-radius: 15px;       
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    }
+
+    /* Student's specific text styles */
+    p { 
+      color: darkslategray; /* Changed from lemonchiffon so it's readable on white */
+      font-style: italic; 
+      font-size: 18px; 
+    }
+
+    h3, h4, h2 { 
+      color: #2f4f4f; /* darkslategray to match student style */
+    }
+
+    img { 
+      max-width: 100%; /* Ensures image stays inside the card */
+      height: auto;
+      border: 2px solid lightblue; 
+      border-radius: 8px;
+    }
+
+    .back-link {
+      align-self: flex-start; /* Keeps the link on the left */
+      margin-bottom: 20px;
+      color: #2f4f4f;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">← Back to Main Page</a>
+
+  <main>
     <h3>Who am I?</h3>
     <p>I am a student at RTS trying to get on track...</p>
     <img src="https://res.cloudinary.com/mybobs/image/upload/q_auto,f_auto,w_2880/20087177_gallery_01_wide" alt="grey couch">
-  </body>
+  </main>
+
+</body>
 </html>

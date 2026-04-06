@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body { background: white; font-family: fantasy, serif; padding: 20px; text-align: center; }
-      h1 { background-color: purple; color: white; font-weight: lighter; padding: 10px; }
-      h2 { background-color: purple; color: white; padding: 10px; }
-      h3 { background-color: purple; color: white; padding: 10px; }
-      p { background-color: cadetblue; color: white; padding: 20px; font-size: 1.2em; border-radius: 8px; }
-      .back { color: purple; text-decoration: none; font-weight: bold; }
-    </style>
-  </head>
-  <body>
-    <a href="index.html" class="back">← Back to Main Page</a>
+<head>
+  <style>
+    /* 1. Body centers the card and adds a background so the white card is visible */
+    body { 
+      background-color: #f0f2f5; /* Light gray background */
+      font-family: fantasy, serif; 
+      margin: 0;
+      padding: 40px 20px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      min-height: 100vh;
+    }
+
+    /* 2. The Card Shape */
+    main {
+      background-color: white;   /* The white card */
+      max-width: 700px; 
+      width: 100%;
+      padding: 40px;             
+      border-radius: 20px;       
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+      box-sizing: border-box;
+    }
+
+    /* Student's specific styles kept original */
+    h1, h2, h3 { 
+      background-color: purple; 
+      color: white; 
+      font-weight: lighter; 
+      padding: 15px; 
+      border-radius: 8px; /* Added slight rounding to match the card */
+      margin-top: 20px;
+    }
+    
+    h1 { margin-top: 0; } /* Keeps the first header at the top of the card */
+
+    p { 
+      background-color: cadetblue; 
+      color: white; 
+      padding: 20px; 
+      font-size: 1.2em; 
+      border-radius: 8px; 
+      text-align: center;
+    }
+
+    .back { 
+      color: purple; 
+      text-decoration: none; 
+      font-weight: bold; 
+      align-self: flex-start; /* Keeps link on the left */
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back">← Back to Main Page</a>
+
+  <main>
     <h1> Who am I? </h1>
     <p> Im a young hispanic male that attends RTS to better myself and to make my mom feel proud of me </p>
+    
     <h2>What does RTS mean to me?</h2> 
     <p> To me RTS mean a lot to me because it's a place where you can feel comfortable around other and it's also a place to be more confident in yourself. </p> 
+    
     <h3> Why does this project matter? </h3>
     <p> This project matters to me because it helps us build a better environment for everyone. </p> 
-  </body>
+  </main>
+
+</body>
 </html>

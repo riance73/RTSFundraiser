@@ -32,17 +32,17 @@
             text-align: center;
             font-size: 1.2em;
             line-height: 1.4;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 10px auto; /* Reduced bottom margin for the break */
             max-width: 850px;
             padding: 0 20px;
         }
-        .info {
+
+        .student-intro {
             text-align: center;
             font-size: 1.2em;
-            line-height: 1.4;
-            margin: 0 auto 30px auto;
-            max-width: 850px;
-            padding: 0 20px;
+            font-style: italic; /* Italicized as requested */
+            margin-bottom: 30px;
+        }
 
         /* --- Updated Donate Button Style --- */
         .donate-container {
@@ -51,23 +51,23 @@
         }
 
         .donate-btn {
-    background-color: #ADD8E6; /* Soft Light Blue */
-    color: #00008B !important; /* Changed text to Dark Blue for better contrast */
-    text-decoration: none;
-    padding: 20px 40px;
-    font-size: 1.6em;
-    font-weight: bold;
-    border-radius: 50px;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.4); /* Matches the light blue */
-    transition: transform 0.2s, background-color 0.2s;
-    border: 2px solid #00008B; /* Dark blue border to make it pop */
-}
+            background-color: #C71585; /* Very Dark Pink */
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 20px 40px;
+            font-size: 1.6em;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(199, 21, 133, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+            border: 2px solid #8B008B;
+        }
 
-.donate-btn:hover {
-    background-color: #B0E0E6; /* Powder Blue on hover */
-    transform: scale(1.05);
-}
+        .donate-btn:hover {
+            background-color: #A1106C;
+            transform: scale(1.05);
+        }
 
         .page-grid {
             display: table;
@@ -121,41 +121,37 @@
             margin: 0 auto;
         }
 
-     /* 1. Update the tube background to Light Blue */
-.tube {
-    position: absolute;
-    right: 20px;
-    width: 60px;
-    height: 500px;
-    border: 4px solid #000000;
-    border-radius: 30px 30px 0 0;
-    /* Background changed to Light Blue (#ADD8E6) */
-    background: #ADD8E6 linear-gradient(to bottom, transparent 98%, #000000 98%);
-    background-size: 100% 41.66px; 
-    display: flex;
-    flex-direction: column-reverse;
-}
+        .tube {
+            position: absolute;
+            right: 20px;
+            width: 60px;
+            height: 500px;
+            border: 4px solid #000000;
+            border-radius: 30px 30px 0 0;
+            background: #ffeaea linear-gradient(to bottom, transparent 98%, #000000 98%);
+            background-size: 100% 41.66px; 
+            display: flex;
+            flex-direction: column-reverse;
+        }
 
-/* 2. Update the mercury fill to Dark Blue */
-.mercury {
-    width: 100%;
-    height: 0%; 
-    background-color: #00008B; /* Dark Blue */
-    border-radius: 25px 25px 0 0;
-}
+        .mercury {
+            width: 100%;
+            height: 0%; 
+            background-color: #FF0000;
+            border-radius: 25px 25px 0 0;
+        }
 
-/* 3. Update the bulb base to Dark Blue */
-.bulb {
-    position: absolute;
-    bottom: -40px;
-    right: 0px;
-    width: 100px;
-    height: 100px;
-    background-color: #00008B; /* Dark Blue */
-    border: 4px solid #000000;
-    border-radius: 50%;
-    z-index: 5;
-}
+        .bulb {
+            position: absolute;
+            bottom: -40px;
+            right: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: #FF0000;
+            border: 4px solid #000000;
+            border-radius: 50%;
+            z-index: 5;
+        }
 
         .label-stack {
             position: absolute;
@@ -182,16 +178,13 @@
         <h1>RTS (Road To Success)</h1>
         
         <p class="intro-text">
-            RTS students spent this semester taking over the design of their environment because they wanted to create a space that actually reflects who RTS is... By supporting our fundraiser, you’re investing in the skills we’ve built and helping us create a legacy of student-led innovation here at Road To Success.
+            RTS students spent this semester taking over the design of their environment because they wanted to create a space that actually reflects who RTS is. To change that, the students went beyond just looking at catalogs; they met with professional interior designers, researched how different materials and environments can actually shift your mood, and even learned to code to bring our Project-Based Learning (PBL) ideas to life. They've put in the work to understand the science and tech behind a productive, welcoming space, and now we’re looking to turn those designs into a reality. By supporting our fundraiser, you’re investing in the skills we’ve built and helping us create a legacy of student-led innovation here at Road To Success.
         </p>
-        <br>
-        <p class="info"> 
-            Below you will find some students who wanted to share some personal reasons for wanting a better space
-        </p>
-        
+
+        <br> <p class="student-intro">Here are some of our students who wanted to share their story.</p>
 
         <div class="donate-container">
-            <a href="https://givebutter.com/road-to-success-legacy-project-ecthxq" 
+            <a href="https://www.zeffy.com/en-US/donation-form/6726adae-7480-463a-8e71-1d3accb1f152" 
                class="donate-btn" 
                target="_blank">
                Click Here to Donate

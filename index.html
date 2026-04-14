@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: fantasy, serif;
-            color: #00008B; /* Dark Blue */
+            color: #00008B;
             background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
@@ -25,140 +25,110 @@
         h1 {
             text-align: center;
             font-size: 3em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .intro-text {
             text-align: center;
             font-size: 1.2em;
             line-height: 1.4;
-            margin: 0 auto 10px auto; /* Reduced bottom margin for the break */
+            margin: 0 auto 10px auto;
             max-width: 850px;
-            padding: 0 20px;
         }
 
         .student-intro {
             text-align: center;
             font-size: 1.2em;
-            font-style: italic; /* Italicized as requested */
+            font-style: italic;
             margin-bottom: 30px;
         }
 
-        /* --- Updated Donate Button Style --- */
         .donate-container {
             text-align: center;
             margin-bottom: 40px;
         }
 
         .donate-btn {
-            background-color: #C71585; /* Very Dark Pink */
+            background-color: #C71585;
             color: #ffffff !important;
             text-decoration: none;
-            padding: 20px 40px;
-            font-size: 1.6em;
+            padding: 15px 35px;
+            font-size: 1.4em;
             font-weight: bold;
             border-radius: 50px;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(199, 21, 133, 0.4);
-            transition: transform 0.2s, background-color 0.2s;
             border: 2px solid #8B008B;
         }
 
-        .donate-btn:hover {
-            background-color: #A1106C;
-            transform: scale(1.05);
-        }
-
         .page-grid {
-            display: table;
-            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .student-col {
-            display: table-cell;
-            width: 65%;
-            vertical-align: top;
-            border: 6px solid #800080; /* Purple Border */
+            flex: 2;
+            min-width: 300px;
+            border: 6px solid #800080;
             border-radius: 20px;
             padding: 20px;
         }
 
         .therm-col {
-            display: table-cell;
-            width: 35%;
-            vertical-align: top;
+            flex: 1;
+            min-width: 200px;
             text-align: center;
         }
 
         .btn-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
         .student-btn {
-            background-color: #800080; /* Purple */
+            background-color: #800080;
             color: #ffffff !important;
             text-decoration: none;
-            width: 40%;
-            padding: 15px 0;
+            padding: 12px;
             text-align: center;
             border-radius: 10px;
-            font-size: 1.2em;
-            display: block;
+            font-size: 1.1em;
         }
 
-        .student-btn:hover {
-            filter: brightness(1.2);
-        }
-
-        /* Thermometer Graphics */
         .thermometer-wrapper {
             position: relative;
             height: 500px;
-            width: 150px;
-            margin: 0 auto;
-        }
-
-        .tube {
-            position: absolute;
-            right: 20px;
             width: 60px;
-            height: 500px;
-            border: 4px solid #000000;
+            margin: 0 auto;
+            background: #ADD8E6;
+            border: 4px solid #000;
             border-radius: 30px 30px 0 0;
-            background: #ffeaea linear-gradient(to bottom, transparent 98%, #000000 98%);
-            background-size: 100% 41.66px; 
-            display: flex;
-            flex-direction: column-reverse;
         }
 
         .mercury {
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            height: 0%; 
-            background-color: #FF0000;
+            height: 0%;
+            background-color: #00008B;
             border-radius: 25px 25px 0 0;
         }
 
         .bulb {
-            position: absolute;
-            bottom: -40px;
-            right: 0px;
             width: 100px;
             height: 100px;
-            background-color: #FF0000;
-            border: 4px solid #000000;
+            background-color: #00008B;
+            border: 4px solid #000;
             border-radius: 50%;
-            z-index: 5;
+            margin: -50px auto 0 auto;
         }
 
         .label-stack {
             position: absolute;
-            left: 0;
-            top: 0;
-            height: 500px;
-            width: 60px;
+            left: -70px;
+            height: 100%;
             display: flex;
             flex-direction: column-reverse;
             justify-content: space-between;
@@ -166,8 +136,8 @@
         }
 
         .stats {
-            margin-top: 80px;
-            font-size: 1.5em;
+            margin-top: 60px;
+            font-size: 1.4em;
             font-weight: bold;
         }
     </style>
@@ -178,17 +148,13 @@
         <h1>RTS (Road To Success)</h1>
         
         <p class="intro-text">
-            RTS students spent this semester taking over the design of their environment because they wanted to create a space that actually reflects who RTS is. To change that, the students went beyond just looking at catalogs; they met with professional interior designers, researched how different materials and environments can actually shift your mood, and even learned to code to bring our Project-Based Learning (PBL) ideas to life. They've put in the work to understand the science and tech behind a productive, welcoming space, and now we’re looking to turn those designs into a reality. By supporting our fundraiser, you’re investing in the skills we’ve built and helping us create a legacy of student-led innovation here at Road To Success.
+            RTS students spent this semester taking over the design of their environment because they wanted to create a space that actually reflects who RTS is. By supporting our fundraiser, you’re investing in the skills we’ve built and helping us create a legacy of student-led innovation here at Road To Success.
         </p>
 
-        <br> <p class="student-intro">Here are some of our students who wanted to share their story.</p>
+        <p class="student-intro">Here are some of our students who wanted to share their story.</p>
 
         <div class="donate-container">
-            <a href="https://www.zeffy.com/en-US/donation-form/6726adae-7480-463a-8e71-1d3accb1f152" 
-               class="donate-btn" 
-               target="_blank">
-               Click Here to Donate
-            </a>
+            <a href="https://www.zeffy.com/en-US/donation-form/6726adae-7480-463a-8e71-1d3accb1f152" class="donate-btn" target="_blank">Click Here to Donate</a>
         </div>
 
         <div class="page-grid">
@@ -212,16 +178,16 @@
             </div>
 
             <div class="therm-col">
-                <div class="thermometer-wrapper">
+                <div style="position: relative; width: 140px; margin: auto;">
                     <div class="label-stack">
-                        <span>$0</span><span>$500</span><span>$1000</span><span>$1500</span>
-                        <span>$2000</span><span>$2500</span><span>$3000</span><span>$3500</span>
-                        <span>$4000</span><span>$4500</span><span>$5000</span><span>$5500</span><span>$6000</span>
+                        <span>$0</span><span>$1000</span><span>$2000</span><span>$3000</span><span>$4000</span><span>$5000</span><span>$6000</span>
                     </div>
-                    <div class="tube"><div class="mercury"></div></div>
+                    <div class="thermometer-wrapper">
+                        <div class="mercury"></div>
+                    </div>
                     <div class="bulb"></div>
                 </div>
-                <div class="stats">Goal: $6,000<br>Raised: $0</div>
+                <div class="stats">Goal: $6,000<br>Raised: $25</div>
             </div>
         </div>
     </div>

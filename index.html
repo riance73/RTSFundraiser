@@ -22,11 +22,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
+        h1 { text-align: center; font-size: 3em; margin-bottom: 20px; }
 
         .intro-text, .student-intro {
             text-align: center;
@@ -50,10 +46,7 @@
             border-radius: 50px;
             display: inline-block;
             border: 2px solid #8B008B;
-            transition: transform 0.2s;
         }
-
-        .donate-btn:hover { transform: scale(1.05); background-color: #A1106C; }
 
         .page-grid {
             display: flex;
@@ -72,7 +65,7 @@
 
         .therm-col {
             flex: 1;
-            min-width: 280px;
+            min-width: 300px;
             text-align: center;
         }
 
@@ -92,20 +85,21 @@
             font-size: 1.1em;
         }
 
-        /* --- SVG THERMOMETER STYLING --- */
+        /* --- Perfect Alignment SVG --- */
         #therm-svg {
-            height: 550px;
-            width: 180px;
+            height: 580px;
+            width: 220px;
         }
 
-        .therm-label {
-            font-size: 18px;
+        .therm-text {
+            font-size: 22px;
             font-weight: bold;
             fill: #00008B;
+            font-family: fantasy, serif;
         }
 
         .stats {
-            margin-top: 20px;
+            margin-top: 10px;
             font-size: 1.4em;
             font-weight: bold;
         }
@@ -147,28 +141,33 @@
             </div>
 
             <div class="therm-col">
-                <svg id="therm-svg" viewBox="0 0 200 600">
-                    <text x="10" y="505" class="therm-label">$0</text>
-                    <text x="10" y="425" class="therm-label">$1000</text>
-                    <text x="10" y="345" class="therm-label">$2000</text>
-                    <text x="10" y="265" class="therm-label">$3000</text>
-                    <text x="10" y="185" class="therm-label">$4000</text>
-                    <text x="10" y="105" class="therm-label">$5000</text>
-                    <text x="10" y="25" class="therm-label">$6000</text>
+                <svg id="therm-svg" viewBox="0 0 250 650">
+                    <text x="10" y="508" class="therm-text">$0</text>
+                    <line x1="80" y1="500" x2="110" y2="500" stroke="black" stroke-width="3" />
 
-                    <line x1="85" y1="500" x2="100" y2="500" stroke="black" stroke-width="3" />
-                    <line x1="85" y1="420" x2="100" y2="420" stroke="black" stroke-width="2" />
-                    <line x1="85" y1="340" x2="100" y2="340" stroke="black" stroke-width="2" />
-                    <line x1="85" y1="260" x2="100" y2="260" stroke="black" stroke-width="2" />
-                    <line x1="85" y1="180" x2="100" y2="180" stroke="black" stroke-width="2" />
-                    <line x1="85" y1="100" x2="100" y2="100" stroke="black" stroke-width="2" />
-                    <line x1="85" y1="20" x2="100" y2="20" stroke="black" stroke-width="3" />
+                    <text x="10" y="428" class="therm-text">$1000</text>
+                    <line x1="80" y1="420" x2="110" y2="420" stroke="black" stroke-width="2" />
 
-                    <rect x="100" y="10" width="60" height="500" rx="30" fill="#ADD8E6" stroke="black" stroke-width="4" />
+                    <text x="10" y="348" class="therm-text">$2000</text>
+                    <line x1="80" y1="340" x2="110" y2="340" stroke="black" stroke-width="2" />
+
+                    <text x="10" y="268" class="therm-text">$3000</text>
+                    <line x1="80" y1="260" x2="110" y2="260" stroke="black" stroke-width="2" />
+
+                    <text x="10" y="188" class="therm-text">$4000</text>
+                    <line x1="80" y1="180" x2="110" y2="180" stroke="black" stroke-width="2" />
+
+                    <text x="10" y="108" class="therm-text">$5000</text>
+                    <line x1="80" y1="100" x2="110" y2="100" stroke="black" stroke-width="2" />
+
+                    <text x="10" y="28" class="therm-text">$6000</text>
+                    <line x1="80" y1="20" x2="110" y2="20" stroke="black" stroke-width="3" />
+
+                    <rect x="110" y="10" width="60" height="500" rx="30" fill="#ADD8E6" stroke="black" stroke-width="4" />
                     
-                    <rect id="mercury-rect" x="100" y="510" width="60" height="0" rx="0" fill="#00008B" />
+                    <rect id="mercury-fill" x="110" y="510" width="60" height="0" rx="0" fill="#00008B" />
 
-                    <circle cx="130" cy="540" r="50" fill="#00008B" stroke="black" stroke-width="4" />
+                    <circle cx="140" cy="550" r="55" fill="#00008B" stroke="black" stroke-width="4" />
                 </svg>
 
                 <div class="stats">Goal: $6,000<br>Raised: $<span id="raised-amount">1130</span></div>
@@ -180,15 +179,15 @@
         window.onload = function() {
             const goal = 6000;
             const raised = parseInt(document.getElementById('raised-amount').innerText);
-            const tubeHeight = 480; // height of the rect minus some padding for the curve
-            const percentage = (raised / goal);
+            const mercury = document.getElementById('mercury-fill');
             
-            const mercury = document.getElementById('mercury-rect');
-            const calculatedHeight = percentage * tubeHeight;
+            // Total height of the 0 to 6000 range is 480 pixels in our SVG
+            const percentage = Math.min(raised / goal, 1);
+            const fillHeight = percentage * 480;
             
-            // Adjust height and Y position to make it grow upwards
-            mercury.setAttribute('height', calculatedHeight);
-            mercury.setAttribute('y', 510 - calculatedHeight);
+            // Set the height and the Y starting point (500 is the $0 line)
+            mercury.setAttribute('height', fillHeight);
+            mercury.setAttribute('y', 500 - fillHeight);
         };
     </script>
 </body>

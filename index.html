@@ -28,27 +28,18 @@
             margin-bottom: 20px;
         }
 
-        .intro-text {
+        .intro-text, .student-intro {
             text-align: center;
             font-size: 1.2em;
             line-height: 1.4;
-            margin: 0 auto 10px auto;
             max-width: 850px;
+            margin: 0 auto 20px auto;
         }
 
-        .student-intro {
-            text-align: center;
-            font-size: 1.2em;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
+        .student-intro { font-style: italic; margin-bottom: 30px; }
 
-        .donate-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        .donate-container { text-align: center; margin-bottom: 40px; }
 
-        /* Restored the Donate Button Styling */
         .donate-btn {
             background-color: #C71585;
             color: #ffffff !important;
@@ -62,10 +53,7 @@
             transition: transform 0.2s;
         }
 
-        .donate-btn:hover {
-            transform: scale(1.05);
-            background-color: #A1106C;
-        }
+        .donate-btn:hover { transform: scale(1.05); background-color: #A1106C; }
 
         .page-grid {
             display: flex;
@@ -84,7 +72,7 @@
 
         .therm-col {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
             text-align: center;
         }
 
@@ -104,60 +92,20 @@
             font-size: 1.1em;
         }
 
-        /* --- DYNAMIC THERMOMETER --- */
-        .thermometer-wrapper {
-            position: relative;
-            height: 500px;
-            width: 60px;
-            margin: 0 auto;
-            border: 4px solid #000;
-            border-radius: 30px 30px 0 0;
-            overflow: hidden;
-            background: #ADD8E6 repeating-linear-gradient(
-                to bottom,
-                transparent,
-                transparent 40px,
-                #000000 40px,
-                #000000 42px
-            );
+        /* --- SVG THERMOMETER STYLING --- */
+        #therm-svg {
+            height: 550px;
+            width: 180px;
         }
 
-        .mercury {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 0%; /* Initially 0, JS will update this */
-            background-color: #00008B; /* Dark Blue */
-            border-radius: 25px 25px 0 0;
-            z-index: 1;
-            transition: height 1.5s ease-out; /* Smooth fill-up animation */
-        }
-
-        .bulb {
-            width: 100px;
-            height: 100px;
-            background-color: #ADD8E6;
-            border: 4px solid #000;
-            border-radius: 50%;
-            margin: -50px auto 0 auto;
-            position: relative;
-            z-index: 5;
-        }
-
-        .label-stack {
-            position: absolute;
-            left: -80px;
-            height: 500px;
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: space-between;
+        .therm-label {
+            font-size: 18px;
             font-weight: bold;
-            text-align: right;
-            width: 70px;
+            fill: #00008B;
         }
 
         .stats {
-            margin-top: 60px;
+            margin-top: 20px;
             font-size: 1.4em;
             font-weight: bold;
         }
@@ -199,37 +147,48 @@
             </div>
 
             <div class="therm-col">
-                <div style="position: relative; width: 150px; margin: auto;">
-                    <div class="label-stack">
-                        <span>$0</span>
-                        <span>$1000</span>
-                        <span>$2000</span>
-                        <span>$3000</span>
-                        <span>$4000</span>
-                        <span>$5000</span>
-                        <span>$6000</span>
-                    </div>
-                    <div class="thermometer-wrapper">
-                        <div class="mercury" id="mercury-bar"></div>
-                    </div>
-                    <div class="bulb"></div>
-                </div>
+                <svg id="therm-svg" viewBox="0 0 200 600">
+                    <text x="10" y="505" class="therm-label">$0</text>
+                    <text x="10" y="425" class="therm-label">$1000</text>
+                    <text x="10" y="345" class="therm-label">$2000</text>
+                    <text x="10" y="265" class="therm-label">$3000</text>
+                    <text x="10" y="185" class="therm-label">$4000</text>
+                    <text x="10" y="105" class="therm-label">$5000</text>
+                    <text x="10" y="25" class="therm-label">$6000</text>
+
+                    <line x1="85" y1="500" x2="100" y2="500" stroke="black" stroke-width="3" />
+                    <line x1="85" y1="420" x2="100" y2="420" stroke="black" stroke-width="2" />
+                    <line x1="85" y1="340" x2="100" y2="340" stroke="black" stroke-width="2" />
+                    <line x1="85" y1="260" x2="100" y2="260" stroke="black" stroke-width="2" />
+                    <line x1="85" y1="180" x2="100" y2="180" stroke="black" stroke-width="2" />
+                    <line x1="85" y1="100" x2="100" y2="100" stroke="black" stroke-width="2" />
+                    <line x1="85" y1="20" x2="100" y2="20" stroke="black" stroke-width="3" />
+
+                    <rect x="100" y="10" width="60" height="500" rx="30" fill="#ADD8E6" stroke="black" stroke-width="4" />
+                    
+                    <rect id="mercury-rect" x="100" y="510" width="60" height="0" rx="0" fill="#00008B" />
+
+                    <circle cx="130" cy="540" r="50" fill="#00008B" stroke="black" stroke-width="4" />
+                </svg>
+
                 <div class="stats">Goal: $6,000<br>Raised: $<span id="raised-amount">1130</span></div>
             </div>
         </div>
     </div>
 
     <script>
-        // Automatic Thermometer Fill Script
         window.onload = function() {
             const goal = 6000;
             const raised = parseInt(document.getElementById('raised-amount').innerText);
-            const percentage = (raised / goal) * 100;
+            const tubeHeight = 480; // height of the rect minus some padding for the curve
+            const percentage = (raised / goal);
             
-            // Limit to 100% so it doesn't break the layout if you exceed the goal
-            const barHeight = Math.min(percentage, 100);
+            const mercury = document.getElementById('mercury-rect');
+            const calculatedHeight = percentage * tubeHeight;
             
-            document.getElementById('mercury-bar').style.height = barHeight + '%';
+            // Adjust height and Y position to make it grow upwards
+            mercury.setAttribute('height', calculatedHeight);
+            mercury.setAttribute('y', 510 - calculatedHeight);
         };
     </script>
 </body>
